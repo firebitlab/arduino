@@ -1,0 +1,57 @@
+https://content.u-blox.com/sites/default/files/products/documents/u-blox8-M8_ReceiverDescrProtSpec_UBX-13003221.pdf
+
+payloadSize = (int)sizeof(NAV_POSLLH)
+(int)sizeof(NAV_POSLLH) => 32
+
+packet NAV-POL-LLH size 36 
+header 		2 
+class 		1 
+id 			1 
+payload 	28 
+checksum A 	2 
+checksum B 	2
+
+B5 62 01 02 1C 00 CC 25 D9 20 5C D8 AE 42 7E 4A => 16
+29 FB 92 EC 01 00 02 C0 01 00 13 1E 00 00 1D 44 => 16
+00 00 ED 5E
+
+B5 62 => Header
+01 => Class
+02 => ID
+
+payload = 28
+
+1C 00 CC 25 => iTOW
+D9 20 5C D8 => lon
+AE 42 7E 4A => lat
+29 FB 92 EC => height
+01 00 02 C0 => hMSL
+01 00 13 1E => hAcc
+00 00 1D 44 => vAcc
+
+00 00 ED 5E => CK_A CK_B
+
+
+
+B5 62 01 02 1C 00 34 49 DA 20 E8 D7 AE 42 B1 4B => 16
+29 FB E1 E3 01 00 51 B7 01 00 03 18 00 00 88 2C => 16
+00 00 02 30
+
+
+//----------------------------------------------------------
+
+packet NAV-PVT size 100
+header 		2 
+class 		1 
+id 			1 
+payload 	92 
+checksum A 	2 
+checksum B 	2
+
+B5 62 01 07 5C 00 2C 17 A5 21 E6 07 04 1E 0C 2F
+1D 37 07 00 00 00 AF 09 CB 1D 03 01 0A 0C FA D5
+AE 42 18 48 29 FB 5A B8 01 00 CB 8B 01 00 50 07
+00 00 C1 0D 00 00 C7 FF FF FF F5 FF FF FF D4 FF
+FF FF 3A 00 00 00 25 BB 9D 01 FA 00 00 00 BC 18
+5D 00 A4 00 00 00 F8 4A 23 00 00 00 00 00 00 00
+00 00 11 32 
